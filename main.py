@@ -4,7 +4,7 @@ from progress.spinner import Spinner
 
 if __name__ == "__main__":
 
-    institution_name = input("Type the Institution Name?")
+    institution_name = input("Type the Institution Name? ")
     print("**************************************************************")
     print("|    Institution Google Scholar Scrapper by Blessing Mashoko |\n".upper())
     print("|    This process my take long, so grab a cup of coffee :-)  |")
@@ -13,7 +13,9 @@ if __name__ == "__main__":
 
     scholarlyInstitution = ScholarlyInstitution(institution_name)
     link = scholarlyInstitution.get_institution_link()
-
+    if link is None:
+        print("Institution not found")
+        exit()
     affiliates = scholarlyInstitution.get_institution_affiliates(link)
     table = PrettyTable(['Id', 'Name', 'Interests'])
     table.align = "l"

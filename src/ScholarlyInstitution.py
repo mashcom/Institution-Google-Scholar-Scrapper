@@ -34,6 +34,8 @@ class ScholarlyInstitution:
         return parameter_found
 
     def get_institution_affiliates(self, link):
+        if link is None:
+            return "No link found"
 
         url = "https://scholar.google.com" + link
         organisation_id = self.get_url_param(url, 'org')
