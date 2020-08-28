@@ -4,12 +4,14 @@ from progress.spinner import Spinner
 
 if __name__ == "__main__":
 
+    institution_name = input("Type the Institution Name?")
     print("**************************************************************")
     print("|    Institution Google Scholar Scrapper by Blessing Mashoko |\n".upper())
     print("|    This process my take long, so grab a cup of coffee :-)  |")
+    print("|    Institution: " + institution_name + "                      |")
     print("**************************************************************")
 
-    scholarlyInstitution = ScholarlyInstitution("Midlands State University")
+    scholarlyInstitution = ScholarlyInstitution(institution_name)
     link = scholarlyInstitution.get_institution_link()
 
     affiliates = scholarlyInstitution.get_institution_affiliates(link)

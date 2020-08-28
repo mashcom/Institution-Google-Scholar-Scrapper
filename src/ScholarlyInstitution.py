@@ -39,7 +39,8 @@ class ScholarlyInstitution:
         organisation_id = self.get_url_param(url, 'org')
         affiliates = []
         can_progress = True
-        i = 0
+        i = 1
+        print("Start Link => " + url)
         while can_progress:
             page = requests.get(url)
             soup = BeautifulSoup(page.text, 'html.parser')
@@ -57,7 +58,7 @@ class ScholarlyInstitution:
                 astart = i * 10
                 next_url = "https://scholar.google.com/citations?view_op=view_org&hl=en&org=" + organisation_id + "&after_author=" + after_author_param + "&astart=" + astart.__str__()
                 url = next_url
-                print("Following Link => "+next_url)
+                print("Following Link => " + next_url)
                 for div in profiles:
                     profile_link = div.find('a')['href']
                     profile_name = div.find('a').contents[0]
