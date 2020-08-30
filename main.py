@@ -1,12 +1,10 @@
 from prettytable import PrettyTable
 from src.ScholarlyInstitution import ScholarlyInstitution
-from progress.spinner import Spinner
-from scholarly import scholarly
 import csv
 
 if __name__ == "__main__":
 
-    institution_name = "Midlands State University" #input("Type the Institution Name? ")
+    institution_name = input("Type the Institution Name? ")
     print("+----------------------------------------------------------------------------------------------------+")
     print("|    Institution Google Scholar Scrapper by Blessing Mashoko                                         |\n".upper())
     print("|    This process my take long, so grab a cup of coffee :-)                                          |")
